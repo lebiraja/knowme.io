@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +60,6 @@
             width: 40px;
             height: 40px;
             margin-right: 15px;
-            display: none; /* Initially hide images */
         }
     </style>
 </head>
@@ -70,81 +70,38 @@
         
         <div class="social-icons">
             <a href="https://www.instagram.com/lebiraja/" target="_blank">
-                <img data-src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                 Instagram
             </a>
             <a href="https://www.snapchat.com/add/lebi_raja?share_id=ne75m7Jr6Zo&locale=en-US" target="_blank">
-                <img data-src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat">
+                <img src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat">
                 Snapchat
             </a>
             <a href="mailto:lebiraja2007@gmail.com">
-                <img data-src="https://logotyp.us/file/gmail.svg" alt="Gmail">
+                <img src="https://logotyp.us/file/gmail.svg" alt="Gmail">
                 Gmail
             </a>
             <a href="tel:+91 8489195917">
-                <img data-src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone">
+                <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone">
                 Phone
             </a>
             <a href="https://x.com/lebiraja" target="_blank">
-                <img data-src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X">
+                <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X">
                 <strong>X</strong>
             </a>
             <a href="https://wa.me/+918489195917" target="_blank">
-                <img data-src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
                 WhatsApp
             </a>
             <a href="https://www.reddit.com/user/Icy-Substance-1430/" target="_blank">
-                <img data-src="https://freelogopng.com/images/all_img/1658834095reddit-logo-png.png" alt="Reddit">
+                <img src="https://freelogopng.com/images/all_img/1658834095reddit-logo-png.png" alt="Reddit">
                 Reddit
             </a>
             <a href="https://web.telegram.org/k/#@zxcvbnc2" target="_blank">
-                <img data-src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
                 Telegram
             </a>
         </div>
     </div>
-    
-    <script>
-        // Function to lazy load images
-        function lazyLoadImages() {
-            const images = document.querySelectorAll('img[data-src]');
-            const config = {
-                rootMargin: '0px 0px 50px 0px',
-                threshold: 0.01
-            };
-
-            let observer;
-            if ('IntersectionObserver' in window) {
-                observer = new IntersectionObserver(onIntersection, config);
-                images.forEach(image => {
-                    observer.observe(image);
-                });
-            } else {
-                // Fallback for browsers without IntersectionObserver support
-                images.forEach(image => {
-                    loadImage(image);
-                });
-            }
-
-            function onIntersection(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        loadImage(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }
-
-            function loadImage(image) {
-                image.src = image.getAttribute('data-src');
-                image.onload = () => {
-                    image.removeAttribute('data-src');
-                    image.style.display = 'block';
-                };
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', lazyLoadImages);
-    </script>
 </body>
 </html>
