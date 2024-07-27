@@ -69,9 +69,9 @@
         }
 
         .social-icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-gap: 20px;
             margin-top: 30px;
             animation: fadeIn 2.5s ease-out;
         }
@@ -81,9 +81,9 @@
             color: #ffffff;
             display: flex;
             align-items: center;
+            justify-content: center;
             background-color: rgba(26, 26, 26, 0.8);
             padding: 15px 20px;
-            margin: 10px;
             border-radius: 50px;
             position: relative;
             transition: transform 0.3s;
@@ -112,6 +112,34 @@
             height: 40px;
             margin-right: 15px;
         }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+
+            .social-icons {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+
+            .social-icons a {
+                padding: 10px;
+            }
+
+            .social-icons img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -132,11 +160,11 @@
                 <img src="https://logotyp.us/file/gmail.svg" alt="Gmail logo">
                 Gmail
             </a>
-            <a href="tel:+91 8489195917" aria-label="Phone">
+            <a href="tel:+918489195917" aria-label="Phone">
                 <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone logo">
                 Phone
             </a>
-            <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
+            <a href="https://x.com/lebiraja" target="_blank" aria-label="X (formerly Twitter)">
                 <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
                 <strong>X</strong>
             </a>
