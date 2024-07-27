@@ -1,61 +1,112 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hey there! I'm Lebi Raja</title>
+    <title>Connect with me on social media</title>
     <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes neon {
+            0%, 100% {
+                text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFD700;
+            }
+            50% {
+                text-shadow: 0 0 2px #FFD700, 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+            }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: url("https://wallpaperaccess.com/full/1683972.jpg") no-repeat center center fixed;
-            background-size: cover;
-            color: white;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(270deg, #0000ff, #ff0000, #0000ff, #ff0000);
+            background-size: 600% 600%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
             text-align: center;
             padding: 20px;
             margin: 0;
         }
+
         h1 {
-            color: #cccccc;
-            font-size: 2.5em;
+            color: #FFD700; /* Adjusted color to gold */
+            font-size: 3em;
             margin-bottom: 0;
+            text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700;
+            animation: neon 1.5s infinite alternate, fadeIn 1s ease-out;
         }
+
         p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin-top: 0;
-            color: #aaaaaa;
+            color: #cccccc;
+            animation: fadeIn 1.5s ease-out;
         }
+
         .container {
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
             max-width: 800px;
-            margin: 20px auto;
+            margin: 30px auto;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 2s ease-out;
         }
+
         .social-icons {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+            animation: fadeIn 2.5s ease-out;
         }
+
         .social-icons a {
             text-decoration: none;
-            color: white;
+            color: #ffffff;
             display: flex;
             align-items: center;
             background-color: rgba(26, 26, 26, 0.8);
-            padding: 15px;
-            width: 80%;
-            margin: 10px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 255, 255, 0.2);
-            transition: background-color 0.3s, transform 0.3s;
+            padding: 15px 20px;
+            margin: 10px;
+            border-radius: 50px;
+            position: relative;
+            transition: transform 0.3s;
         }
+
+        .social-icons a::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            border-radius: 50px;
+            background: linear-gradient(270deg, #0000ff, #ff0000, #0000ff, #ff0000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+        }
+
         .social-icons a:hover {
-            background-color: rgba(51, 51, 51, 0.8);
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
+
         .social-icons img {
             width: 40px;
             height: 40px;
@@ -69,36 +120,36 @@
         <p>Connect with me on social media:</p>
         
         <div class="social-icons">
-            <a href="https://www.instagram.com/lebiraja/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            <a href="https://www.instagram.com/lebiraja/" target="_blank" aria-label="Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo">
                 Instagram
             </a>
-            <a href="https://www.snapchat.com/add/lebi_raja?share_id=ne75m7Jr6Zo&locale=en-US" target="_blank">
-                <img src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat">
+            <a href="https://www.snapchat.com/add/lebi_raja?share_id=ne75m7Jr6Zo&locale=en-US" target="_blank" aria-label="Snapchat">
+                <img src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat logo">
                 Snapchat
             </a>
-            <a href="mailto:lebiraja2007@gmail.com">
-                <img src="https://logotyp.us/file/gmail.svg" alt="Gmail">
+            <a href="mailto:lebiraja2007@gmail.com" aria-label="Gmail">
+                <img src="https://logotyp.us/file/gmail.svg" alt="Gmail logo">
                 Gmail
             </a>
-            <a href="tel:+91 8489195917">
-                <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone">
+            <a href="tel:+91 8489195917" aria-label="Phone">
+                <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone logo">
                 Phone
             </a>
-            <a href="https://x.com/lebiraja" target="_blank">
-                <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X">
+            <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
+                <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
                 <strong>X</strong>
             </a>
-            <a href="https://wa.me/+918489195917" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
                 WhatsApp
             </a>
-            <a href="https://www.reddit.com/user/Icy-Substance-1430/" target="_blank">
-                <img src="https://freelogopng.com/images/all_img/1658834095reddit-logo-png.png" alt="Reddit">
+            <a href="https://www.reddit.com/user/Icy-Substance-1430/" target="_blank" aria-label="Reddit">
+                <img src="https://freelogopng.com/images/all_img/1658834095reddit-logo-png.png" alt="Reddit logo">
                 Reddit
             </a>
-            <a href="https://web.telegram.org/k/#@zxcvbnc2" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+            <a href="https://t.me/+918489195917" target="_blank" aria-label="Telegram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram logo">
                 Telegram
             </a>
         </div>
