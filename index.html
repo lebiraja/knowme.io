@@ -12,10 +12,10 @@
 
         @keyframes neon {
             0%, 100% {
-                text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFD700;
+                text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700, 0 0 9px #FFD700, 0 0 12px #FFD700; /* Reduced intensity */
             }
             50% {
-                text-shadow: 0 0 2px #FFD700, 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+                text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700, 0 0 6px #FFD700, 0 0 8px #FFD700; /* Reduced intensity */
             }
         }
 
@@ -27,7 +27,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(270deg, #000040, #400000, #000040, #400000); /* Brighter gradient colors */
+            background: linear-gradient(270deg, #202040, #402020, #202040, #402020); /* Slightly lighter gradient colors */
             background-size: 600% 600%;
             animation: gradientBG 15s ease infinite;
             color: #ffffff;
@@ -40,7 +40,7 @@
             color: #FFD700; /* Adjusted color to gold */
             font-size: 3em;
             margin-bottom: 0;
-            text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700;
+            text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700;
             animation: neon 1.5s infinite alternate, fadeIn 1s ease-out;
         }
 
@@ -91,7 +91,7 @@
             width: calc(100% + 10px);
             height: calc(100% + 10px);
             border-radius: 50px;
-            background: linear-gradient(270deg, #000040, #400000, #000040, #400000); /* Brighter gradient colors */
+            background: linear-gradient(270deg, #202040, #402020, #202040, #402020); /* Slightly lighter gradient colors */
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             z-index: -1;
