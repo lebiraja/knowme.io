@@ -10,16 +10,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes neon {
-            0%, 100% {
-                text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700, 0 0 9px #FFD700, 0 0 12px #FFD700; /* Reduced intensity */
-            }
-            50% {
-                text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700, 0 0 6px #FFD700, 0 0 8px #FFD700; /* Reduced intensity */
-            }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        @keyframes gradientBG {
+        @keyframes gradientLight {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -27,8 +24,8 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(270deg, #6060FF, #FF6060, #6060FF, #FF6060); /* Brighter gradient colors */
-            background-size: 600% 600%;
+            background: linear-gradient(270deg, #000020, #200000, #000020, #200000);
+            background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             color: #ffffff;
             text-align: center;
@@ -37,11 +34,11 @@
         }
 
         h1 {
-            color: #FFD700; /* Adjusted color to gold */
+            color: #00FFFF; /* Changed color to cyan */
             font-size: 3em;
             margin-bottom: 0;
-            text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700;
-            animation: neon 1.5s infinite alternate, fadeIn 1s ease-out;
+            text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+            animation: fadeIn 1s ease-out;
         }
 
         p {
@@ -78,6 +75,7 @@
             align-items: center;
             background-color: rgba(26, 26, 26, 0.8);
             padding: 15px 20px;
+            margin: 10px;
             border-radius: 50px;
             position: relative;
             transition: transform 0.3s;
@@ -91,10 +89,11 @@
             width: calc(100% + 10px);
             height: calc(100% + 10px);
             border-radius: 50px;
-            background: linear-gradient(270deg, #6060FF, #FF6060, #6060FF, #FF6060); /* Brighter gradient colors */
+            background: linear-gradient(270deg, violet, indigo, blue, green, yellow, orange, red);
             background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            animation: gradientLight 15s ease infinite;
             z-index: -1;
+            filter: brightness(0.8);
         }
 
         .social-icons a:hover {
@@ -156,7 +155,7 @@
             </a>
             <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
                 <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
-                X
+                <strong>X</strong>
             </a>
             <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
