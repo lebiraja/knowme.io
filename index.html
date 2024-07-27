@@ -19,12 +19,6 @@
             }
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
-        }
-
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -33,7 +27,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(270deg, #0000ff, #ff0000, #0000ff, #ff0000);
+            background: linear-gradient(270deg, #000020, #200000, #000020, #200000);
             background-size: 600% 600%;
             animation: gradientBG 15s ease infinite;
             color: #ffffff;
@@ -70,8 +64,9 @@
 
         .social-icons {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            grid-gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
             margin-top: 30px;
             animation: fadeIn 2.5s ease-out;
         }
@@ -81,9 +76,9 @@
             color: #ffffff;
             display: flex;
             align-items: center;
-            justify-content: center;
             background-color: rgba(26, 26, 26, 0.8);
             padding: 15px 20px;
+            margin: 10px;
             border-radius: 50px;
             position: relative;
             transition: transform 0.3s;
@@ -97,7 +92,7 @@
             width: calc(100% + 10px);
             height: calc(100% + 10px);
             border-radius: 50px;
-            background: linear-gradient(270deg, #0000ff, #ff0000, #0000ff, #ff0000);
+            background: linear-gradient(270deg, #000020, #200000, #000020, #200000);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             z-index: -1;
@@ -124,10 +119,6 @@
 
             p {
                 font-size: 1.2em;
-            }
-
-            .social-icons {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
             }
 
             .social-icons a {
@@ -164,7 +155,7 @@
                 <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone logo">
                 Phone
             </a>
-            <a href="https://x.com/lebiraja" target="_blank" aria-label="X (formerly Twitter)">
+            <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
                 <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
                 <strong>X</strong>
             </a>
@@ -184,3 +175,4 @@
     </div>
 </body>
 </html>
+
