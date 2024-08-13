@@ -3,69 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect with me on social media</title>
+    <title>Connect with Me</title>
     <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes gradientLight {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5); /* Updated gradient colors */
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FF7E5F, #FEB47B); /* Updated gradient colors */
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            color: #ffffff;
+            color: #333;
             text-align: center;
             padding: 20px;
             margin: 0;
         }
 
         h1 {
-            color: #FFFF00; /* Changed color to yellow */
+            color: #ffffff; /* Updated color */
             font-size: 3em;
             margin-bottom: 0;
-            text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             animation: fadeIn 1s ease-out;
         }
 
         p {
-            font-size: 1.5em;
+            font-size: 1.4em;
             margin-top: 0;
-            color: #cccccc;
+            color: #f9f9f9;
             animation: fadeIn 1.5s ease-out;
         }
 
         .container {
-            background-color: rgba(0, 0, 0, 0.85);
-            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-            max-width: 800px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
             margin: 30px auto;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
             animation: fadeIn 2s ease-out;
         }
 
         .social-icons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            justify-items: center;
-            margin-top: 30px;
-            animation: fadeIn 2.5s ease-out;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .social-icons a {
@@ -73,42 +66,28 @@
             color: #ffffff;
             display: flex;
             align-items: center;
-            background-color: rgba(26, 26, 26, 0.8);
-            padding: 20px 30px; /* Increased padding */
-            margin: 10px;
+            background-color: #333;
+            padding: 15px 25px;
             border-radius: 50px;
             position: relative;
-            transition: transform 0.3s;
-        }
-
-        .social-icons a::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            width: calc(100% + 10px);
-            height: calc(100% + 10px);
-            border-radius: 50px;
-            background: linear-gradient(270deg, violet, indigo, blue, green, yellow, orange, red);
-            background-size: 400% 400%;
-            animation: gradientLight 15s ease infinite;
-            z-index: -1;
-            filter: brightness(0.8);
+            transition: transform 0.3s, background-color 0.3s;
+            animation: pulse 2s infinite;
         }
 
         .social-icons a:hover {
             transform: scale(1.1);
+            background-color: #555;
         }
 
         .social-icons img {
-            width: 50px; /* Increased icon size */
-            height: 50px; /* Increased icon size */
-            margin-right: 20px; /* Increased margin */
+            width: 40px; /* Adjusted icon size */
+            height: 40px; /* Adjusted icon size */
+            margin-right: 15px; /* Adjusted margin */
         }
 
         @media (max-width: 768px) {
             body {
-                background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5); /* Updated gradient colors */
+                background: linear-gradient(135deg, #FF7E5F, #FEB47B); /* Updated gradient colors */
                 background-size: 400% 400%;
                 animation: gradientBG 15s ease infinite;
             }
@@ -126,13 +105,13 @@
             }
 
             .social-icons a {
-                padding: 15px; /* Adjusted padding */
+                padding: 10px 20px; /* Adjusted padding */
             }
 
             .social-icons img {
-                width: 40px; /* Adjusted icon size */
-                height: 40px; /* Adjusted icon size */
-                margin-right: 15px; /* Adjusted margin */
+                width: 35px; /* Adjusted icon size */
+                height: 35px; /* Adjusted icon size */
+                margin-right: 10px; /* Adjusted margin */
             }
         }
     </style>
