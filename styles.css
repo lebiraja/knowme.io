@@ -1,0 +1,51 @@
+/* Keyframes for icon hover bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeInIcons {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for rotate animation on hover */
+@keyframes rotateIcon {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Adding bounce animation on hover for social media icons */
+.social-icons a:hover {
+    animation: bounce 0.6s;
+}
+
+/* Adding fade-in effect to social icons when the page loads */
+.social-icons a {
+    opacity: 0;
+    animation: fadeInIcons 1.5s ease-out forwards;
+    animation-delay: 0.3s; /* Delay to prevent simultaneous loading */
+}
+
+/* Adding a slight rotation effect on hover */
+.social-icons a:hover img {
+    animation: rotateIcon 1s ease-in-out;
+}
