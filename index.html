@@ -22,9 +22,25 @@
             100% { background-position: 0% 50%; }
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes fadeInIcons {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes rotateIcon {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5); /* Updated gradient colors */
+            background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             color: #ffffff;
@@ -34,7 +50,7 @@
         }
 
         h1 {
-            color: #FFFF00; /* Changed color to yellow */
+            color: #FFFF00;
             font-size: 3em;
             margin-bottom: 0;
             text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00;
@@ -74,11 +90,13 @@
             display: flex;
             align-items: center;
             background-color: rgba(26, 26, 26, 0.8);
-            padding: 20px 30px; /* Increased padding */
+            padding: 20px 30px;
             margin: 10px;
             border-radius: 50px;
             position: relative;
             transition: transform 0.3s;
+            opacity: 0;
+            animation: fadeInIcons 1.5s ease-out forwards;
         }
 
         .social-icons a::before {
@@ -98,17 +116,23 @@
 
         .social-icons a:hover {
             transform: scale(1.1);
+            animation: bounce 0.6s;
         }
 
         .social-icons img {
-            width: 50px; /* Increased icon size */
-            height: 50px; /* Increased icon size */
-            margin-right: 20px; /* Increased margin */
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover img {
+            animation: rotateIcon 1s ease-in-out;
         }
 
         @media (max-width: 768px) {
             body {
-                background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5); /* Updated gradient colors */
+                background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5);
                 background-size: 400% 400%;
                 animation: gradientBG 15s ease infinite;
             }
@@ -126,13 +150,13 @@
             }
 
             .social-icons a {
-                padding: 15px; /* Adjusted padding */
+                padding: 15px;
             }
 
             .social-icons img {
-                width: 40px; /* Adjusted icon size */
-                height: 40px; /* Adjusted icon size */
-                margin-right: 15px; /* Adjusted margin */
+                width: 40px;
+                height: 40px;
+                margin-right: 15px;
             }
         }
     </style>
