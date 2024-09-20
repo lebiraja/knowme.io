@@ -33,39 +33,34 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes rotateIcon {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5);
+            background: linear-gradient(270deg, #1c0036, #002b50, #004d4d);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            color: #ffffff;
+            color: #d1e0e0;
             text-align: center;
             padding: 20px;
             margin: 0;
         }
 
         h1 {
-            color: #FFFF00;
+            color: #00f3ff;
             font-size: 3em;
             margin-bottom: 0;
-            text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00;
+            text-shadow: 0 0 8px #00f3ff, 0 0 12px #00f3ff;
             animation: fadeIn 1s ease-out;
         }
 
         p {
             font-size: 1.5em;
             margin-top: 0;
-            color: #cccccc;
+            color: #b3cccc;
             animation: fadeIn 1.5s ease-out;
         }
 
         .container {
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(15, 15, 25, 0.85);
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
@@ -86,10 +81,10 @@
 
         .social-icons a {
             text-decoration: none;
-            color: #ffffff;
+            color: #d1e0e0;
             display: flex;
             align-items: center;
-            background-color: rgba(26, 26, 26, 0.8);
+            background-color: rgba(35, 35, 45, 0.9);
             padding: 15px;
             margin: 10px;
             border-radius: 50px;
@@ -106,15 +101,15 @@
             width: calc(100% + 10px);
             height: calc(100% + 10px);
             border-radius: 50px;
-            background: linear-gradient(270deg, violet, indigo, blue, green, yellow, orange, red);
+            background: linear-gradient(270deg, #ff00ff, #0088ff, #00ffcc);
             background-size: 400% 400%;
             animation: gradientLight 15s ease infinite;
             z-index: -1;
-            filter: brightness(0.8);
+            filter: brightness(0.75);
         }
 
         .social-icons a:hover {
-            transform: scale(1.1);
+            transform: scale(1.2); /* Slightly larger when hovered */
             animation: bounce 0.6s;
         }
 
@@ -126,7 +121,7 @@
         }
 
         .social-icons a:hover img {
-            animation: rotateIcon 1s ease-in-out;
+            transform: scale(1.2); /* Icons get bigger without rotating */
         }
 
         @media (max-width: 768px) {
@@ -177,26 +172,28 @@
                 Phone
             </a>
             <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
-                <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
-                <strong>X</strong>
-            </a>
-            <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
-                WhatsApp
-            </a>
-            <a href="https://www.reddit.com/user/Icy-Substance-1430/" target="_blank" aria-label="Reddit">
-                <img src="https://freelogopng.com/images/all_img/1658834095reddit-logo-png.png" alt="Reddit logo">
-                Reddit
-            </a>
-            <a href="https://t.me/+918489195917" target="_blank" aria-label="Telegram">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram logo">
-                Telegram
-            </a>
-            <a href="https://www.linkedin.com/in/lebi-raja-c-480b02322/" target="_blank" aria-label="LinkedIn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn logo">
-                LinkedIn
-            </a>
-        </div>
+            <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
+            <strong>X</strong>
+        </a>
+        <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
+            WhatsApp
+        </a>
+        <a href="https://www.reddit.com/user/Icy-Substance-1430/" target="_blank" aria-label="Reddit">
+            <img src="https://freelogopng.com/images/all_img/1658834095reddit-logo-png.png" alt="Reddit logo">
+            Reddit
+        </a>
+        <a href="https://t.me/+918489195917" target="_blank" aria-label="Telegram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram logo">
+            Telegram
+        </a>
+        <a href="https://www.linkedin.com/in/lebi-raja-c-480b02322/" target="_blank" aria-label="LinkedIn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn logo">
+            LinkedIn
+        </a>
     </div>
+</div>
 </body>
 </html>
+
+
