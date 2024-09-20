@@ -16,17 +16,33 @@
             100% { background-position: 0% 50%; }
         }
 
+        @keyframes gradientLight {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
         }
 
+        @keyframes fadeInIcons {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes rotateIcon {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(270deg, #6a0572, #00adb5, #202c59, #4b6587);
+            background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5);
             background-size: 400% 400%;
-            animation: gradientBG 12s ease infinite;
+            animation: gradientBG 15s ease infinite;
             color: #ffffff;
             text-align: center;
             padding: 20px;
@@ -34,17 +50,17 @@
         }
 
         h1 {
-            color: #FFD700;
+            color: #FFFF00;
             font-size: 3em;
             margin-bottom: 0;
-            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+            text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00;
             animation: fadeIn 1s ease-out;
         }
 
         p {
             font-size: 1.5em;
             margin-top: 0;
-            color: #e0e0e0;
+            color: #cccccc;
             animation: fadeIn 1.5s ease-out;
         }
 
@@ -52,7 +68,7 @@
             background-color: rgba(0, 0, 0, 0.85);
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
             max-width: 800px;
             margin: 30px auto;
             backdrop-filter: blur(10px);
@@ -61,7 +77,7 @@
 
         .social-icons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             justify-items: center;
             margin-top: 30px;
@@ -73,35 +89,58 @@
             color: #ffffff;
             display: flex;
             align-items: center;
-            background-color: rgba(26, 26, 26, 0.8);
-            padding: 20px 30px;
+            justify-content: center;
+            background-color: rgba(26, 26, 26, 0.9);
+            padding: 20px;
             margin: 10px;
-            border-radius: 50px;
+            border-radius: 50%;
             position: relative;
-            transition: transform 0.3s, background-color 0.3s;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
+            transition: all 0.3s ease-in-out;
+            width: 100px;
+            height: 100px;
+            border: 6px solid transparent;
+            background-clip: padding-box;
         }
 
-        .social-icons a:hover {
-            background-color: #FFD700;
-            color: #000000;
-            transform: scale(1.05);
-            animation: bounce 0.6s;
+        .social-icons a::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border-radius: 50%;
+            z-index: -1;
+            background: linear-gradient(45deg, #ff6ec4, #7873f5, #43e97b, #f8ff00);
+            background-size: 300% 300%;
+            animation: gradientBG 4s ease infinite;
+        }
+
+        .social-icons a:hover::before {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.7);
         }
 
         .social-icons img {
             width: 50px;
             height: 50px;
-            margin-right: 20px;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease-in-out;
         }
 
         .social-icons a:hover img {
-            transform: rotate(360deg);
+            transform: scale(1.2);
         }
 
         @media (max-width: 768px) {
+            body {
+                background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5);
+                background-size: 400% 400%;
+                animation: gradientBG 15s ease infinite;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
             h1 {
                 font-size: 2.5em;
             }
@@ -130,39 +169,30 @@
         <div class="social-icons">
             <a href="https://www.instagram.com/lebiraja/" target="_blank" aria-label="Instagram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo">
-                Instagram
             </a>
             <a href="https://www.snapchat.com/add/lebi_raja?share_id=ne75m7Jr6Zo&locale=en-US" target="_blank" aria-label="Snapchat">
                 <img src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat logo">
-                Snapchat
             </a>
             <a href="mailto:lebiraja2007@gmail.com" aria-label="Gmail">
                 <img src="https://logotyp.us/file/gmail.svg" alt="Gmail logo">
-                Gmail
             </a>
             <a href="tel:+918489195917" aria-label="Phone">
                 <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone logo">
-                Phone
             </a>
             <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
                 <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
-                X
             </a>
             <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
-                WhatsApp
             </a>
             <a href="https://www.reddit.com/user/Icy-Substance-1430/" target="_blank" aria-label="Reddit">
                 <img src="https://freelogopng.com/images/all_img/1658834095reddit-logo-png.png" alt="Reddit logo">
-                Reddit
             </a>
             <a href="https://t.me/+918489195917" target="_blank" aria-label="Telegram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram logo">
-                Telegram
             </a>
             <a href="https://www.linkedin.com/in/lebi-raja-c-480b02322/" target="_blank" aria-label="LinkedIn">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn logo">
-                LinkedIn
             </a>
         </div>
     </div>
