@@ -16,33 +16,17 @@
             100% { background-position: 0% 50%; }
         }
 
-        @keyframes gradientLight {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
         }
 
-        @keyframes fadeInIcons {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes rotateIcon {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5);
+            background: linear-gradient(270deg, #6a0572, #00adb5, #202c59, #4b6587);
             background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            animation: gradientBG 12s ease infinite;
             color: #ffffff;
             text-align: center;
             padding: 20px;
@@ -50,17 +34,17 @@
         }
 
         h1 {
-            color: #FFFF00;
+            color: #FFD700;
             font-size: 3em;
             margin-bottom: 0;
-            text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
             animation: fadeIn 1s ease-out;
         }
 
         p {
             font-size: 1.5em;
             margin-top: 0;
-            color: #cccccc;
+            color: #e0e0e0;
             animation: fadeIn 1.5s ease-out;
         }
 
@@ -68,7 +52,7 @@
             background-color: rgba(0, 0, 0, 0.85);
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             max-width: 800px;
             margin: 30px auto;
             backdrop-filter: blur(10px);
@@ -77,7 +61,7 @@
 
         .social-icons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
             justify-items: center;
             margin-top: 30px;
@@ -94,28 +78,15 @@
             margin: 10px;
             border-radius: 50px;
             position: relative;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background-color 0.3s;
             opacity: 0;
-            animation: fadeInIcons 1.5s ease-out forwards;
-        }
-
-        .social-icons a::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            width: calc(100% + 10px);
-            height: calc(100% + 10px);
-            border-radius: 50px;
-            background: linear-gradient(270deg, violet, indigo, blue, green, yellow, orange, red);
-            background-size: 400% 400%;
-            animation: gradientLight 15s ease infinite;
-            z-index: -1;
-            filter: brightness(0.8);
+            animation: fadeIn 1.5s ease-out forwards;
         }
 
         .social-icons a:hover {
-            transform: scale(1.1);
+            background-color: #FFD700;
+            color: #000000;
+            transform: scale(1.05);
             animation: bounce 0.6s;
         }
 
@@ -127,20 +98,10 @@
         }
 
         .social-icons a:hover img {
-            animation: rotateIcon 1s ease-in-out;
+            transform: rotate(360deg);
         }
 
         @media (max-width: 768px) {
-            body {
-                background: linear-gradient(270deg, #431e92, #00b5b5, #431e92, #00b5b5);
-                background-size: 400% 400%;
-                animation: gradientBG 15s ease infinite;
-            }
-
-            .container {
-                padding: 20px;
-            }
-
             h1 {
                 font-size: 2.5em;
             }
@@ -185,7 +146,7 @@
             </a>
             <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
                 <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
-                <strong>X</strong>
+                X
             </a>
             <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
