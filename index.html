@@ -40,6 +40,7 @@
             max-width: 800px;
             width: 90%;
             text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .social-icons {
@@ -96,6 +97,25 @@
             opacity: 1;
         }
 
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffd700;
+            color: #1e2a44;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5em;
@@ -106,10 +126,65 @@
                 height: 30px;
             }
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .parallax {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://source.unsplash.com/random/1920x1080');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background-color: #2b3760;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .modal.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #ffd700;
+            font-size: 1.5em;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 
 <body>
+    <div class="parallax"></div>
     <div class="container">
         <h1>Connect with Me</h1>
         <p>Follow me on social media platforms:</p>
@@ -150,7 +225,67 @@
                 <div class="tooltip">GitHub</div>
             </a>
         </div>
+        <button onclick="openModal()" style="margin-top: 20px; background-color: #ffd700; color: #1e2a44; border: none; padding: 10px 15px; border-radius: 10px; cursor: pointer;">More Info</button>
     </div>
+
+    <div class="modal" id="infoModal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h2>More About Me</h2>
+        <p>Welcome to my contact page! Feel free to connect with me on any of the platforms above.</p>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()">&#8679; Top</button>
+
+    <script>
+        const backToTopButton = document.querySelector('.back-to-top');
+        const modal = document.getElementById('infoModal');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openModal() {
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            modal.classList.remove('show');
+        }
+
+        // Adding hover animations
+        const socialLinks = document.querySelectorAll('.social-icons a');
+        socialLinks.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.transform = 'scale(1.1) rotate(2deg)';
+            });
+
+            link.addEventListener('mouseout', () => {
+                link.style.transform = 'scale(1)';
+            });
+        });
+
+        // Smooth tooltip fade-in animation
+        const tooltips = document.querySelectorAll('.tooltip');
+        socialLinks.forEach((link, index) => {
+            link.addEventListener('mouseover', () => {
+                tooltips[index].style.opacity = 1;
+                tooltips[index].style.transition = 'opacity 0.5s ease-in-out';
+            });
+
+            link.addEventListener('mouseout', () => {
+                tooltips[index].style.opacity = 0;
+                tooltips[index].style.transition = 'opacity 0.5s ease-in-out';
+            });
+        });
+    </script>
 </body>
 
 </html>
