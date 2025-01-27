@@ -16,7 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            block-size: 100vh;
             overflow: hidden;
         }
 
@@ -24,7 +24,7 @@
             font-family: 'Playfair Display', serif;
             color: #ffd700;
             font-size: 3em;
-            margin-top: 0;
+            margin-block-start: 0;
         }
 
         p {
@@ -37,10 +37,9 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-            max-width: 800px;
-            width: 90%;
+            max-inline-size: 800px;
+            inline-size: 90%;
             text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
         }
 
         .social-icons {
@@ -48,7 +47,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            margin-top: 20px;
+            margin-block-start: 20px;
         }
 
         .social-icons a {
@@ -61,46 +60,26 @@
             padding: 15px;
             border-radius: 50px;
             transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-            position: relative;
         }
 
         .social-icons a:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             background-color: #ffd700;
             color: #1e2a44;
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6);
         }
 
         .social-icons img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            inline-size: 40px;
+            block-size: 40px;
+            margin-inline-end: 10px;
             border-radius: 50%;
-        }
-
-        .tooltip {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ffd700;
-            color: #1e2a44;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8em;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-
-        .social-icons a:hover .tooltip {
-            opacity: 1;
         }
 
         .back-to-top {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            inset-block-end: 20px;
+            inset-inline-end: 20px;
             background-color: #ffd700;
             color: #1e2a44;
             border: none;
@@ -116,27 +95,17 @@
             display: block;
         }
 
-        @media (max-width: 768px) {
+        @media (max-inline-size: 768px) {
             h1 {
                 font-size: 2.5em;
             }
 
             .social-icons img {
-                width: 30px;
-                height: 30px;
+                inline-size: 30px;
+                block-size: 30px;
             }
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 
@@ -148,32 +117,26 @@
             <a href="https://www.instagram.com/lebiraja/" target="_blank" aria-label="Instagram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo">
                 <span>Instagram</span>
-                <div class="tooltip">Instagram</div>
             </a>
             <a href="https://www.snapchat.com/add/lebi_raja" target="_blank" aria-label="Snapchat">
                 <img src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat logo">
                 <span>Snapchat</span>
-                <div class="tooltip">Snapchat</div>
             </a>
             <a href="mailto:lebiraja2007@gmail.com" aria-label="Gmail">
                 <img src="https://logotyp.us/file/gmail.svg" alt="Gmail logo">
                 <span>Gmail</span>
-                <div class="tooltip">Email</div>
             </a>
             <a href="tel:+918489195917" aria-label="Phone">
                 <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone logo">
                 <span>Phone</span>
-                <div class="tooltip">Call Me</div>
             </a>
             <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
                 <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
                 <span>X</span>
-                <div class="tooltip">Twitter</div>
             </a>
             <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
                 <span>WhatsApp</span>
-                <div class="tooltip">WhatsApp</div>
             </a>
         </div>
     </div>
