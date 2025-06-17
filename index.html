@@ -1,291 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect with Me</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.10/build/spline-viewer.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e2a44, #2b3760);
-            color: #f4f4f4;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
         }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            color: #ffd700;
-            font-size: 3em;
-            margin-top: 0;
+        spline-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
-
-        p {
-            font-size: 1.2em;
-            color: #d1d1d1;
-        }
-
-        .container {
-            background-color: rgba(30, 42, 68, 0.9);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-            max-width: 800px;
-            width: 90%;
-            text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .social-icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            text-decoration: none;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #2b3760;
-            padding: 15px;
-            border-radius: 50px;
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-            position: relative;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.1);
-            background-color: #ffd700;
-            color: #1e2a44;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6);
-        }
-
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
-
         .tooltip {
             position: absolute;
             bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #ffd700;
-            color: #1e2a44;
+            background-color: #e879f9; /* Pinkish-purple to match animation */
+            color: #1e1e2e;
             padding: 5px 10px;
             border-radius: 5px;
-            font-size: 0.8em;
+            font-size: 0.8rem;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s ease-in-out;
         }
-
-        .social-icons a:hover .tooltip {
+        .social-icon:hover .tooltip {
             opacity: 1;
         }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffd700;
-            color: #1e2a44;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50px;
-            font-size: 1em;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: none;
-        }
-
-        .back-to-top.show {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            .social-icons img {
-                width: 30px;
-                height: 30px;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .parallax {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://source.unsplash.com/random/1920x1080');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-
         .modal {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
-            background-color: #2b3760;
-            color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
             z-index: 1000;
             transition: transform 0.3s ease-in-out;
         }
-
         .modal.show {
             transform: translate(-50%, -50%) scale(1);
         }
-
-        .modal-close {
-            background: none;
-            border: none;
-            color: #ffd700;
-            font-size: 1.5em;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
+        .social-icon:hover {
+            animation: bounce 0.5s ease-in-out;
         }
-
+        @keyframes bounce {
+            0%, 100% { transform: scale(1.1) rotate(2deg); }
+            50% { transform: scale(1.15) rotate(4deg); }
+        }
     </style>
 </head>
-
-<body>
-    <div class="parallax"></div>
-    <div class="container">
-        <h1>Connect with Me</h1>
-        <p>Follow me on social media platforms:</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/lebiraja/" target="_blank" aria-label="Instagram">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo">
+<body class="relative flex items-center justify-center min-h-screen bg-transparent">
+    <spline-viewer url="https://prod.spline.design/TXL-wttKwDoWRTEe/scene.splinecode"></spline-viewer>
+    <div class="container p-8 md:p-12 max-w-4xl w-11/12 text-center">
+        <h1 class="font-serif text-4xl md:text-5xl text-pink-400 font-bold mb-4">Connect with Me</h1>
+        <p class="text-lg text-purple-200 mb-6">Follow me on social media platforms:</p>
+        <div class="social-icons flex flex-wrap justify-center gap-16">
+            <a href="https://www.instagram.com/lebiraja/" target="_blank" aria-label="Instagram" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" class="w-10 h-10 mr-4 rounded-full">
                 <span>Instagram</span>
                 <div class="tooltip">Instagram</div>
             </a>
-            <a href="https://www.snapchat.com/add/lebi_raja" target="_blank" aria-label="Snapchat">
-                <img src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat logo">
+            <a href="https://www.snapchat.com/add/lebi_raja" target="_blank" aria-label="Snapchat" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
+                <img src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat logo" class="w-10 h-10 mr-4 rounded-full">
                 <span>Snapchat</span>
                 <div class="tooltip">Snapchat</div>
             </a>
-            <a href="mailto:lebiraja2007@gmail.com" aria-label="Gmail">
-                <img src="https://logotyp.us/file/gmail.svg" alt="Gmail logo">
+            <a href="mailto:lebiraja2007@gmail.com" aria-label="Gmail" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
+                <img src="https://logotyp.us/file/gmail.svg" alt="Gmail logo" class="w-10 h-10 mr-4 rounded-full">
                 <span>Gmail</span>
                 <div class="tooltip">Email</div>
             </a>
-            <a href="tel:+918489195917" aria-label="Phone">
-                <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone logo">
+            <a href="tel:+918489195917" aria-label="Phone" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
+                <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone logo" class="w-10 h-10 mr-4 rounded-full">
                 <span>Phone</span>
                 <div class="tooltip">Call Me</div>
             </a>
-            <a href="https://x.com/lebiraja" target="_blank" aria-label="X">
-                <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo">
+            <a href="https://x.com/lebiraja" target="_blank" aria-label="X" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
+                <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo" class="w-10 h-10 mr-4 rounded-full">
                 <span>X</span>
                 <div class="tooltip">Twitter</div>
             </a>
-            <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
+            <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo" class="w-10 h-10 mr-4 rounded-full">
                 <span>WhatsApp</span>
                 <div class="tooltip">WhatsApp</div>
             </a>
-            <a href="https://github.com/lebiraja" target="_blank" aria-label="GitHub">
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo">
+            <a href="https://github.com/lebiraja" target="_blank" aria-label="GitHub" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" class="w-10 h-10 mr-4 rounded-full">
                 <span>GitHub</span>
                 <div class="tooltip">GitHub</div>
             </a>
+            <a href="https://www.linkedin.com/in/lebi-raja-c-480b02322/" target="_blank" aria-label="LinkedIn" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn logo" class="w-10 h-10 mr-4 rounded-full">
+                <span>LinkedIn</span>
+                <div class="tooltip">LinkedIn</div>
+            </a>
         </div>
-        <button onclick="openModal()" style="margin-top: 20px; background-color: #ffd700; color: #1e2a44; border: none; padding: 10px 15px; border-radius: 10px; cursor: pointer;">More Info</button>
+        <button onclick="openModal()" class="mt-6 bg-pink-500 text-gray-900 px-4 py-2 rounded-xl hover:bg-pink-600 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition-all duration-300">More Info</button>
     </div>
-
-    <div class="modal" id="infoModal">
-        <button class="modal-close" onclick="closeModal()">&times;</button>
-        <h2>More About Me</h2>
-        <p>Welcome to my contact page! Feel free to connect with me on any of the platforms above.</p>
+    <div class="modal bg-gray-900 bg-opacity-90 text-white p-6 rounded-lg shadow-2xl" id="infoModal">
+        <button class="modal-close text-pink-400 text-2xl absolute top-2 right-2 bg-transparent border-none cursor-pointer" onclick="closeModal()">×</button>
+        <h2 class="text-2xl font-bold text-pink-400 mb-4">More About Me</h2>
+        <p class="text-purple-200">Welcome to my contact page! Feel free to connect with me on any of the platforms above.</p>
     </div>
-
-    <button class="back-to-top" onclick="scrollToTop()">&#8679; Top</button>
-
+    <button class="back-to-top fixed bottom-5 right-5 bg-pink-500 text-gray-900 px-4 py-2 rounded-full shadow-lg hover:bg-pink-600 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition-all duration-300 hidden" onclick="scrollToTop()">⇧ Top</button>
     <script>
         const backToTopButton = document.querySelector('.back-to-top');
         const modal = document.getElementById('infoModal');
-
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
+            backToTopButton.classList.toggle('hidden', window.scrollY <= 300);
         });
-
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
         function openModal() {
             modal.classList.add('show');
         }
-
         function closeModal() {
             modal.classList.remove('show');
         }
-
-        // Adding hover animations
-        const socialLinks = document.querySelectorAll('.social-icons a');
+        const socialLinks = document.querySelectorAll('.social-icon');
         socialLinks.forEach(link => {
             link.addEventListener('mouseover', () => {
                 link.style.transform = 'scale(1.1) rotate(2deg)';
             });
-
             link.addEventListener('mouseout', () => {
                 link.style.transform = 'scale(1)';
             });
         });
-
-        // Smooth tooltip fade-in animation
-        const tooltips = document.querySelectorAll('.tooltip');
-        socialLinks.forEach((link, index) => {
-            link.addEventListener('mouseover', () => {
-                tooltips[index].style.opacity = 1;
-                tooltips[index].style.transition = 'opacity 0.5s ease-in-out';
-            });
-
-            link.addEventListener('mouseout', () => {
-                tooltips[index].style.opacity = 0;
-                tooltips[index].style.transition = 'opacity 0.5s ease-in-out';
-            });
-        });
     </script>
 </body>
-
 </html>
