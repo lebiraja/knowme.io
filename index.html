@@ -1,143 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect with Me</title>
+    <title>Lebi Raja – Connect with Me</title>
+    <meta name="description" content="Connect with Lebi Raja on Instagram, GitHub, LinkedIn, and more.">
+    <meta name="keywords" content="Lebi Raja, Social Media, Connect, Portfolio">
+    <meta name="author" content="Lebi Raja">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.10/build/spline-viewer.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        spline-viewer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .tooltip {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #e879f9; /* Pinkish-purple to match animation */
-            color: #1e1e2e;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .social-icon:hover .tooltip {
-            opacity: 1;
-        }
-        .modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            z-index: 1000;
-            transition: transform 0.3s ease-in-out;
-        }
-        .modal.show {
-            transform: translate(-50%, -50%) scale(1);
-        }
-        .social-icon:hover {
-            animation: bounce 0.5s ease-in-out;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: scale(1.1) rotate(2deg); }
-            50% { transform: scale(1.15) rotate(4deg); }
-        }
+        body { font-family: 'Poppins', sans-serif; }
+        spline-viewer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
     </style>
 </head>
-<body class="relative flex items-center justify-center min-h-screen bg-transparent">
+<body class="relative flex items-center justify-center min-h-screen bg-transparent text-white">
+
+    <!-- Background -->
     <spline-viewer url="https://prod.spline.design/TXL-wttKwDoWRTEe/scene.splinecode"></spline-viewer>
-    <div class="container p-8 md:p-12 max-w-4xl w-11/12 text-center">
+
+    <!-- Content -->
+    <main class="container p-8 md:p-12 max-w-4xl w-11/12 text-center">
         <h1 class="font-serif text-4xl md:text-5xl text-pink-400 font-bold mb-4">Connect with Me</h1>
         <p class="text-lg text-purple-200 mb-6">Follow me on social media platforms:</p>
-        <div class="social-icons flex flex-wrap justify-center gap-16">
-            <a href="https://www.instagram.com/lebiraja/" target="_blank" aria-label="Instagram" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" class="w-10 h-10 mr-4 rounded-full">
-                <span>Instagram</span>
-                <div class="tooltip">Instagram</div>
+
+        <!-- Social Links -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="https://www.instagram.com/lebiraja/" target="_blank" aria-label="Instagram"
+               class="flex items-center bg-gray-800 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-lg transition-all duration-300">
+                <span class="material-icons mr-3">📷</span> Instagram
             </a>
-            <a href="https://www.snapchat.com/add/lebi_raja" target="_blank" aria-label="Snapchat" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
-                <img src="https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013-400x400.png" alt="Snapchat logo" class="w-10 h-10 mr-4 rounded-full">
-                <span>Snapchat</span>
-                <div class="tooltip">Snapchat</div>
+            <a href="https://www.snapchat.com/add/lebi_raja" target="_blank" aria-label="Snapchat"
+               class="flex items-center bg-gray-800 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-lg transition-all duration-300">
+                <span class="material-icons mr-3">👻</span> Snapchat
             </a>
-            <a href="mailto:lebiraja2007@gmail.com" aria-label="Gmail" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
-                <img src="https://logotyp.us/file/gmail.svg" alt="Gmail logo" class="w-10 h-10 mr-4 rounded-full">
-                <span>Gmail</span>
-                <div class="tooltip">Email</div>
+            <a href="mailto:lebiraja2007@gmail.com" aria-label="Gmail"
+               class="flex items-center bg-gray-800 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-lg transition-all duration-300">
+                <span class="material-icons mr-3">📧</span> Gmail
             </a>
-            <a href="tel:+918489195917" aria-label="Phone" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
-                <img src="https://play-lh.googleusercontent.com/bk3e0glVbvRC4Z0uEZ5Oso5wjS89r1P_X5e-k3N_UBkTPXZLhGv50rRy7LAuDzzC9w=w240-h480-rw" alt="Phone logo" class="w-10 h-10 mr-4 rounded-full">
-                <span>Phone</span>
-                <div class="tooltip">Call Me</div>
+            <a href="tel:+918489195917" aria-label="Phone"
+               class="flex items-center bg-gray-800 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-lg transition-all duration-300">
+                <span class="material-icons mr-3">📞</span> Call Me
             </a>
-            <a href="https://x.com/lebiraja" target="_blank" aria-label="X" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
-                <img src="https://img.freepik.com/premium-vector/x-logo-sticker_941327-38.jpg?size=626&ext=jpg" alt="X logo" class="w-10 h-10 mr-4 rounded-full">
-                <span>X</span>
-                <div class="tooltip">Twitter</div>
+            <a href="https://x.com/lebiraja" target="_blank" aria-label="X/Twitter"
+               class="flex items-center bg-gray-800 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-lg transition-all duration-300">
+                <span class="material-icons mr-3">✖️</span> X (Twitter)
             </a>
-            <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo" class="w-10 h-10 mr-4 rounded-full">
-                <span>WhatsApp</span>
-                <div class="tooltip">WhatsApp</div>
+            <a href="https://wa.me/+918489195917" target="_blank" aria-label="WhatsApp"
+               class="flex items-center bg-gray-800 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-lg transition-all duration-300">
+                <span class="material-icons mr-3">💬</span> WhatsApp
             </a>
-            <a href="https://github.com/lebiraja" target="_blank" aria-label="GitHub" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" class="w-10 h-10 mr-4 rounded-full">
-                <span>GitHub</span>
-                <div class="tooltip">GitHub</div>
+            <a href="https://github.com/lebiraja" target="_blank" aria-label="GitHub"
+               class="flex items-center bg-gray-800 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-lg transition-all duration-300">
+                <span class="material-icons mr-3">🐱</span> GitHub
             </a>
-            <a href="https://www.linkedin.com/in/lebi-raja-c-480b02322/" target="_blank" aria-label="LinkedIn" class="social-icon flex items-center bg-gray-800 text-purple-100 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transform transition-all duration-300 relative">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn logo" class="w-10 h-10 mr-4 rounded-full">
-                <span>LinkedIn</span>
-                <div class="tooltip">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/lebi-raja-c-480b02322/" target="_blank" aria-label="LinkedIn"
+               class="flex items-center bg-gray-800 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-gray-900 hover:shadow-lg transition-all duration-300">
+                <span class="material-icons mr-3">💼</span> LinkedIn
             </a>
         </div>
-        <button onclick="openModal()" class="mt-6 bg-pink-500 text-gray-900 px-4 py-2 rounded-xl hover:bg-pink-600 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition-all duration-300">More Info</button>
+
+        <!-- More Info Button -->
+        <button onclick="openModal()" 
+                class="mt-6 bg-pink-500 text-gray-900 px-4 py-2 rounded-xl hover:bg-pink-600 hover:shadow-lg transition-all duration-300">
+            More Info
+        </button>
+    </main>
+
+    <!-- Modal -->
+    <div id="infoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center scale-0 transition-transform duration-300">
+        <div class="bg-gray-900 p-6 rounded-lg max-w-md w-full relative">
+            <button onclick="closeModal()" class="absolute top-3 right-3 text-pink-400 text-2xl">×</button>
+            <h2 class="text-2xl font-bold text-pink-400 mb-4">More About Me</h2>
+            <p class="text-purple-200">Hi, I’m Lebi Raja — AI & Data Science student, anime fan, solo traveler, and future tech entrepreneur. 🚀</p>
+        </div>
     </div>
-    <div class="modal bg-gray-900 bg-opacity-90 text-white p-6 rounded-lg shadow-2xl" id="infoModal">
-        <button class="modal-close text-pink-400 text-2xl absolute top-2 right-2 bg-transparent border-none cursor-pointer" onclick="closeModal()">×</button>
-        <h2 class="text-2xl font-bold text-pink-400 mb-4">More About Me</h2>
-        <p class="text-purple-200">FUCK YOU! WORLD </p>
-    </div>
-    <button class="back-to-top fixed bottom-5 right-5 bg-pink-500 text-gray-900 px-4 py-2 rounded-full shadow-lg hover:bg-pink-600 hover:shadow-[0_0_15px_rgba(236,72,153,0.8)] transition-all duration-300 hidden" onclick="scrollToTop()">⇧ Top</button>
+
+    <!-- Back to Top -->
+    <button class="back-to-top fixed bottom-5 right-5 bg-pink-500 text-gray-900 px-4 py-2 rounded-full shadow-lg hover:bg-pink-600 transition-all duration-300 hidden" onclick="scrollToTop()">
+        ⇧ Top
+    </button>
+
     <script>
         const backToTopButton = document.querySelector('.back-to-top');
         const modal = document.getElementById('infoModal');
+
         window.addEventListener('scroll', () => {
             backToTopButton.classList.toggle('hidden', window.scrollY <= 300);
         });
+
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         function openModal() {
-            modal.classList.add('show');
+            modal.classList.remove('scale-0');
+            modal.classList.add('scale-100');
         }
         function closeModal() {
-            modal.classList.remove('show');
+            modal.classList.remove('scale-100');
+            modal.classList.add('scale-0');
         }
-        const socialLinks = document.querySelectorAll('.social-icon');
-        socialLinks.forEach(link => {
-            link.addEventListener('mouseover', () => {
-                link.style.transform = 'scale(1.1) rotate(2deg)';
-            });
-            link.addEventListener('mouseout', () => {
-                link.style.transform = 'scale(1)';
-            });
-        });
     </script>
+
 </body>
 </html>
